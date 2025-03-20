@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:walletappui/util/my_button.dart';
 import 'package:walletappui/util/my_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -105,7 +106,14 @@ class _HomePageState extends State<HomePage> {
           // 3 buttons -> send + pay + bills
           Row(
             children: [
+
               // send button
+              MyButton(
+                iconImagePath: 'lib/icons/send-money.png', 
+                buttonText: 'Send',
+                ),
+                
+              // pay button
             ],
           ),
 
