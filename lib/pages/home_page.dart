@@ -16,9 +16,18 @@ class HomePage extends StatelessWidget {
           child: Row(
             children: [
               Text(
-                'My Cards',
-                style: TextStyle(fontSize: 26),
+                'My',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  ),
               ),
+              Text(
+                'Cards',
+                style: TextStyle(fontSize: 28),
+              ),
+
+              // plus button
             ],
           ),
           )
