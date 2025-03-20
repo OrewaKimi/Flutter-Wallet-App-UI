@@ -105,6 +105,7 @@ class _HomePageState extends State<HomePage> {
 
           // 3 buttons -> send + pay + bills
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
 
               // send button
