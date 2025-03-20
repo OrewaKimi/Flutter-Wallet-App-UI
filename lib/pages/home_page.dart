@@ -119,7 +119,11 @@ class _HomePageState extends State<HomePage> {
                 buttonText: 'Pay',
                 ),
 
-              // pay button
+              // bills button
+               MyButton(
+                iconImagePath: 'lib/icons/bill.png', 
+                buttonText: 'Bills',
+                ),
             ],
           ),
 
