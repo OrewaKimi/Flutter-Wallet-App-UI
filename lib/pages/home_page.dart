@@ -50,7 +50,13 @@ class HomePage extends StatelessWidget {
             child: PageView(
               scrollDirection: Axis.horizontal,
               children: [
-                MyCard(),
+                MyCard(
+                  balance: 5250.20,
+                  cardNumber: 11264892,
+                  expiryMonth: 10,
+                  expiryYear: 24,
+                  color: Colors.deepPurple[400],
+                ),
                 MyCard(),
                 MyCard(),
               ],
