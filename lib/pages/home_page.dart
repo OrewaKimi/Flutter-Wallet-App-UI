@@ -12,11 +12,14 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           // app bar
-          Padding(padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'My',
+              Row(children: [
+                Text(
+                'My ',
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -26,9 +29,19 @@ class HomePage extends StatelessWidget {
                 'Cards',
                 style: TextStyle(fontSize: 28),
               ),
+            ],
+          ),
 
               // plus button
-              Icon(Icons.add)
+              Container(
+                padding: EdgeInsets.all(4),
+                decoration: BoxDecoration(
+                  color: Colors.grey[400],
+                  shape: BoxShape.circle,
+                ),
+              
+             child: Icon(Icons.add),
+              ),
             ],
           ),
           )
