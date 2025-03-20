@@ -112,7 +112,13 @@ class _HomePageState extends State<HomePage> {
                 iconImagePath: 'lib/icons/send-money.png', 
                 buttonText: 'Send',
                 ),
-                
+
+                // pay button
+                MyButton(
+                iconImagePath: 'lib/icons/credit-card.png', 
+                buttonText: 'Pay',
+                ),
+
               // pay button
             ],
           ),
