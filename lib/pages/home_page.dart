@@ -72,21 +72,21 @@ class _HomePageState extends State<HomePage> {
                   cardNumber: 11264892,
                   expiryMonth: 10,
                   expiryYear: 24,
-                  color: Colors.deepPurple[400],
+                  color: Colors.deepPurple[300],
                 ),
                 MyCard(
                   balance: 3420.23,
                   cardNumber: 113573349,
                   expiryMonth: 11,
                   expiryYear: 23,
-                  color: Colors.blue[400],
+                  color: Colors.blue[300],
                 ),
                 MyCard(
                   balance: 420.20,
                   cardNumber: 112463289,
                   expiryMonth: 8,
                   expiryYear: 22,
-                  color: Colors.green[400],
+                  color: Colors.green[300],
                 ),
               ],
             ),
@@ -97,9 +97,26 @@ class _HomePageState extends State<HomePage> {
           SmoothPageIndicator(
             controller: _controller,
              count: 3,
-             effect: ExpandingDotsEffect(),
+             effect: ExpandingDotsEffect(
+              activeDotColor: Colors.grey.shade800, 
+              ),
              ),
+
+             SizedBox(height: 25),
+             
           // 3 buttons -> send + pay + bills
+          Row(
+            children: [
+              Container(
+                height: 100,
+                padding: EdgeInsets.all(12),
+                 decoration: BoxDecoration(color: Colors.white),
+                child: Center(
+                  child: Image.asset('lib/icons/send-money.png'),
+                ),
+              )
+            ],
+          )
 
           // column -> stats + transactions
         ],
