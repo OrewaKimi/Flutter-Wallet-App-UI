@@ -107,13 +107,20 @@ class _HomePageState extends State<HomePage> {
           // 3 buttons -> send + pay + bills
           Row(
             children: [
-              Container(
+              // send button
+              Column(
+                children: [
+                  Container(
                 height: 100,
-                padding: EdgeInsets.all(12),
-                 decoration: BoxDecoration(color: Colors.white),
+                padding: EdgeInsets.all(20),
+                 decoration: BoxDecoration(color: Colors.white,
+                 borderRadius: BorderRadius.circular(20),
+                 ),
                 child: Center(
                   child: Image.asset('lib/icons/send-money.png'),
                 ),
+              ),
+                ],
               )
             ],
           )
