@@ -28,6 +28,7 @@ class HomePage extends StatelessWidget {
               ),
 
               // plus button
+              Icon(Icons.add)
             ],
           ),
           )
