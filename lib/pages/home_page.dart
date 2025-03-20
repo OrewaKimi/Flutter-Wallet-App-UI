@@ -1,10 +1,25 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:walletappui/util/my_card.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  // pagecontroller
+  final _controller = PageController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,27 +27,25 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.grey[300],
       body: Column(
         children: [
-          
           // app bar
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(children: [
-                  Text(
-                    'My ',
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
+                Row(
+                  children: [
+                    Text(
+                      'My ',
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  Text(
-                    'Cards',
-                    style: TextStyle(fontSize: 28),
-                  ),
-                ]),
-                
+                    Text('Cards', style: TextStyle(fontSize: 28)),
+                  ],
+                ),
+
                 // plus button
                 Container(
                   padding: EdgeInsets.all(4),
@@ -46,12 +59,13 @@ class HomePage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 25),
-          
+
           // cards
           Container(
             height: 200,
             child: PageView(
               scrollDirection: Axis.horizontal,
+              controller: _controller,
               children: [
                 MyCard(
                   balance: 5250.20,
@@ -76,8 +90,15 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
 
+          SizedBox(height: 25),
+
+          SmoothPageIndicator(
+            controller: _controller,
+             count: 3,
+             effect: ExpandingDotsEffect(),
+             ),
           // 3 buttons -> send + pay + bills
 
           // column -> stats + transactions
