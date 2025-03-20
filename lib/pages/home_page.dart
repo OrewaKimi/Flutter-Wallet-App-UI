@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: Colors.grey[300],
       body: Column(
         children: [
+          
           // app bar
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -31,6 +32,7 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(fontSize: 28),
                   ),
                 ]),
+                
                 // plus button
                 Container(
                   padding: EdgeInsets.all(4),
@@ -44,6 +46,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 25),
+          
           // cards
           Container(
             height: 200,
@@ -74,7 +77,9 @@ class HomePage extends StatelessWidget {
               ],
             ),
           )
+
           // 3 buttons -> send + pay + bills
+
           // column -> stats + transactions
         ],
       ),
