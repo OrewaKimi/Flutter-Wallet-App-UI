@@ -138,8 +138,11 @@ class _HomePageState extends State<HomePage> {
               children: [
                 // statistics
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // icon
+                    Row(
+                      children: [
+                        // icon
                     Container(
                       height: 80,
                       padding: EdgeInsets.all(12),
@@ -164,17 +167,18 @@ class _HomePageState extends State<HomePage> {
                          ),
                         ),
                          SizedBox(
-                          height: 12,
+                          height: 8,
                         ),
                         Text('Payment and Income',
                          style: TextStyle(
                          fontSize: 16,
                          color: Colors.grey[600],
-                         ),
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
-            
                     Icon(Icons.arrow_forward_ios),
                   ],
                 ),
