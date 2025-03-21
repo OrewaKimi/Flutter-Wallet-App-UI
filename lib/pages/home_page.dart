@@ -150,8 +150,11 @@ class _HomePageState extends State<HomePage> {
                       Text('Statistics'),
                       Text('Payment and Income'),
                     ],
-                  )
-                ],)
+                  ),
+
+                  Icon(Icons.arrow_forward),
+                ],
+              ),
             ],
           )
         ],
