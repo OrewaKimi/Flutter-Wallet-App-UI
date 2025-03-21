@@ -27,6 +27,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(),
       body: SafeArea(
         child: Column(
           children: [
@@ -148,13 +153,13 @@ class _HomePageState extends State<HomePage> {
 
                   // transaction
                   MyListTile(
-                    iconImagePath: 'lib/icons/transation.png',
+                    iconImagePath: 'lib/icons/transaction.png',
                     tileTitle: 'Transactions',
                     tileSubTitle: 'Transactions History',
                   ),
                 ],
               ),
-            ),
+            )
           ],
         ),
       ),
