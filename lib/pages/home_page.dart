@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
             effect: ExpandingDotsEffect(activeDotColor: Colors.grey.shade800),
           ),
 
-          SizedBox(height: 25),
+          SizedBox(height: 40 ),
 
           // 3 buttons -> send + pay + bills
           Padding( 
@@ -132,9 +132,11 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
 
+          SizedBox(height: 40 ),
+
           // column -> stats + transactions
           Padding(
-            padding: const EdgeInsets.all(25.0),
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: Column(
               children: [
                 // statistics
