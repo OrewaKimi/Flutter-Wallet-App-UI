@@ -6,7 +6,7 @@ class MyCard extends StatelessWidget {
   final int expiryMonth;
   final int expiryYear;
   final color;
-  
+
   const MyCard({
     Key? key,
     required this.balance,
@@ -14,8 +14,7 @@ class MyCard extends StatelessWidget {
     required this.expiryMonth,
     required this.expiryYear,
     required this.color,
-
-    }) : super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +31,19 @@ class MyCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'Balance', style: TextStyle(color: Colors.white  )),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Balance', style: TextStyle(color: Colors.white)),
+                Image.asset('lib/icons/visa.png', height: 50),
+              ],
+            ),
             Text(
               '\$' + balance.toString(),
-              style: TextStyle(color: Colors.white, fontSize: 36,
-              fontWeight: FontWeight.bold,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 36,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(height: 30),
@@ -46,12 +52,14 @@ class MyCard extends StatelessWidget {
               children: [
                 // card number
                 Text(
-                  cardNumber.toString(), 
-                  style: TextStyle(color: Colors.white)),
+                  cardNumber.toString(),
+                  style: TextStyle(color: Colors.white),
+                ),
                 // card expiration date
                 Text(
                   expiryMonth.toString() + '/' + expiryYear.toString(),
-                  style: TextStyle(color: Colors.white)),
+                  style: TextStyle(color: Colors.white),
+                ),
               ],
             ),
           ],
