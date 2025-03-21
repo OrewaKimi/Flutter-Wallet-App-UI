@@ -27,135 +27,137 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      body: Column(
-        children: [
-          // app bar
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      'My ',
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
+      body: SafeArea(
+        child: Column(
+          children: [
+            // app bar
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'My ',
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    Text('Cards', style: TextStyle(fontSize: 28)),
-                  ],
-                ),
-
-                // plus button
-                Container(
-                  padding: EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[400],
-                    shape: BoxShape.circle,
+                      Text('Cards', style: TextStyle(fontSize: 28)),
+                    ],
                   ),
-                  child: Icon(Icons.add),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 25),
 
-          // cards
-          Container(
-            height: 200,
-            child: PageView(
-              scrollDirection: Axis.horizontal,
+                  // plus button
+                  Container(
+                    padding: EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[400],
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(Icons.add),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 25),
+
+            // cards
+            Container(
+              height: 200,
+              child: PageView(
+                scrollDirection: Axis.horizontal,
+                controller: _controller,
+                children: [
+                  MyCard(
+                    balance: 5250.20,
+                    cardNumber: 11264892,
+                    expiryMonth: 10,
+                    expiryYear: 24,
+                    color: Colors.deepPurple[300],
+                  ),
+                  MyCard(
+                    balance: 3420.23,
+                    cardNumber: 113573349,
+                    expiryMonth: 11,
+                    expiryYear: 23,
+                    color: Colors.blue[300],
+                  ),
+                  MyCard(
+                    balance: 420.20,
+                    cardNumber: 112463289,
+                    expiryMonth: 8,
+                    expiryYear: 22,
+                    color: Colors.green[300],
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 25),
+
+            SmoothPageIndicator(
               controller: _controller,
-              children: [
-                MyCard(
-                  balance: 5250.20,
-                  cardNumber: 11264892,
-                  expiryMonth: 10,
-                  expiryYear: 24,
-                  color: Colors.deepPurple[300],
-                ),
-                MyCard(
-                  balance: 3420.23,
-                  cardNumber: 113573349,
-                  expiryMonth: 11,
-                  expiryYear: 23,
-                  color: Colors.blue[300],
-                ),
-                MyCard(
-                  balance: 420.20,
-                  cardNumber: 112463289,
-                  expiryMonth: 8,
-                  expiryYear: 22,
-                  color: Colors.green[300],
-                ),
-              ],
+              count: 3,
+              effect: ExpandingDotsEffect(activeDotColor: Colors.grey.shade800),
             ),
-          ),
 
-          SizedBox(height: 25),
+            SizedBox(height: 40),
 
-          SmoothPageIndicator(
-            controller: _controller,
-            count: 3,
-            effect: ExpandingDotsEffect(activeDotColor: Colors.grey.shade800),
-          ),
+            // 3 buttons -> send + pay + bills
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // send button
+                  MyButton(
+                    iconImagePath: 'lib/icons/send-money.png',
+                    buttonText: 'Send',
+                  ),
 
-          SizedBox(height: 40 ),
+                  // pay button
+                  MyButton(
+                    iconImagePath: 'lib/icons/credit-card.png',
+                    buttonText: 'Pay',
+                  ),
 
-          // 3 buttons -> send + pay + bills
-          Padding( 
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+                  // bills button
+                  MyButton(
+                    iconImagePath: 'lib/icons/bill.png',
+                    buttonText: 'Bills',
+                  ),
+                ],
+              ),
+            ),
 
-              // send button
-              MyButton(
-                iconImagePath: 'lib/icons/send-money.png', 
-                buttonText: 'Send',
-                ),
+            SizedBox(height: 40),
 
-                // pay button
-                MyButton(
-                iconImagePath: 'lib/icons/credit-card.png', 
-                buttonText: 'Pay',
-                ),
-
-              // bills button
-               MyButton(
-                iconImagePath: 'lib/icons/bill.png', 
-                buttonText: 'Bills',
-                ), 
-            ],
-          ),
-        ),
-
-          SizedBox(height: 40 ),
-
-          // column -> stats + transactions
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: Column(
-              children: [
-                // statistics
-                 MyListTile(
-                  iconImagePath: 'lib/icons/statistics.png', 
-                  tileTitle: 'Statistics', 
-                  tileSubTitle: 'Payment and Income',
+            // column -> stats + transactions
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Column(
+                children: [
+                  // statistics
+                  MyListTile(
+                    iconImagePath: 'lib/icons/statistics.png',
+                    tileTitle: 'Statistics',
+                    tileSubTitle: 'Payment and Income',
                   ),
 
                   // transaction
                   MyListTile(
-                  iconImagePath: 'lib/icons/transation.png', 
-                  tileTitle: 'Transactions', 
-                  tileSubTitle: 'Transactions History',
+                    iconImagePath: 'lib/icons/transation.png',
+                    tileTitle: 'Transactions',
+                    tileSubTitle: 'Transactions History',
                   ),
-              ],
+                ],
+              ),
             ),
-          )
-        ],),
+          ],
+        ),
+      ),
     );
   }
 }
