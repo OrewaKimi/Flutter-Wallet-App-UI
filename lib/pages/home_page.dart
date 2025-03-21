@@ -104,8 +104,10 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 25),
 
           // 3 buttons -> send + pay + bills
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          Padding( 
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
 
               // send button
@@ -124,9 +126,10 @@ class _HomePageState extends State<HomePage> {
                MyButton(
                 iconImagePath: 'lib/icons/bill.png', 
                 buttonText: 'Bills',
-                ),
+                ), 
             ],
           ),
+        ),
 
           // column -> stats + transactions
         ],
