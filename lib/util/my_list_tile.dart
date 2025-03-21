@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
 class MyListTile extends StatelessWidget {
-  const MyListTile({Key? key}) : super(key: key);
+  final String iconImagePath;
+  final String tileTitle;
+  final String tileSubTitle;
+
+  const MyListTile({
+    Key? key,
+    required this.iconImagePath,
+    required this.tileTitle,
+    required this.tileSubTitle,
+    }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
