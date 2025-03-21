@@ -41,7 +41,7 @@ class MyListTile extends StatelessWidget {
                 ),
                 SizedBox(height: 8),
                 Text(
-                  'Payment and Income',
+                  tileSubTitle,
                   style: TextStyle(fontSize: 16, color: Colors.grey[600]),
                 ),
               ],
