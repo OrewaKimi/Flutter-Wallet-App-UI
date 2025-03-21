@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:walletappui/util/my_button.dart';
 import 'package:walletappui/util/my_card.dart';
+import 'package:walletappui/util/my_list_tile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -137,56 +138,22 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 // statistics
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        // icon
-                    Container(
-                      height: 80,
-                      padding: EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[100],
-                        borderRadius: BorderRadius.circular(12),
-                        ),
-                      child: Image.asset('lib/icons/statistics.png'),
-                    ),
+                 MyListTile(
+                  iconImagePath: 'lib/icons/statistics.png', 
+                  tileTitle: 'Statistics', 
+                  tileSubTitle: 'Payment and Income',
+                  ),
 
-                    SizedBox(
-                      width: 20,
-                    ),
-            
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Statistics',
-                        style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                         fontSize: 18,
-                         ),
-                        ),
-                         SizedBox(
-                          height: 8,
-                        ),
-                        Text('Payment and Income',
-                         style: TextStyle(
-                         fontSize: 16,
-                         color: Colors.grey[600],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Icon(Icons.arrow_forward_ios),
-                  ],
-                ),
+                  // transaction
+                  MyListTile(
+                  iconImagePath: 'lib/icons/transation.png', 
+                  tileTitle: 'Transactions', 
+                  tileSubTitle: 'Transactions History',
+                  ),
               ],
             ),
           )
-        ],
-      ),
+        ],),
     );
   }
 }
