@@ -137,8 +137,7 @@ class _HomePageState extends State<HomePage> {
               count: 3,
               effect: ExpandingDotsEffect(activeDotColor: Colors.grey.shade800),
             ),
-
-            SizedBox(height: 40),
+            SizedBox(height: 20),
 
             // 3 buttons -> send + pay + bills
             Padding(
@@ -167,7 +166,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            SizedBox(height: 40),
+            SizedBox(height: 20),
 
             // column -> stats + transactions
             Padding(
