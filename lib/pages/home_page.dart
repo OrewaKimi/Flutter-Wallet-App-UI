@@ -149,11 +149,29 @@ class _HomePageState extends State<HomePage> {
                         ),
                       child: Image.asset('lib/icons/statistics.png'),
                     ),
+
+                    SizedBox(
+                      width: 20,
+                    ),
             
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Statistics'),
-                        Text('Payment and Income'),
+                        Text('Statistics',
+                        style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                         fontSize: 18,
+                         ),
+                        ),
+                         SizedBox(
+                          height: 12,
+                        ),
+                        Text('Payment and Income',
+                         style: TextStyle(
+                         fontSize: 16,
+                         color: Colors.grey[600],
+                         ),
+                        ),
                       ],
                     ),
             
