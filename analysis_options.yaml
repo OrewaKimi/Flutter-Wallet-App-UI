@@ -12,6 +12,7 @@ analyzer:
     unused_import: ignore
     prefer_interpolation_to_compose_strings: ignore
     sized_box_for_whitespace: ignore
+    use_super_parameters: ignore
 include: package:flutter_lints/flutter.yaml
 
 linter:
