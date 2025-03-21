@@ -29,6 +29,8 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.grey[300],
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
+        backgroundColor: Colors.pink,
+        child: Icon(Icons.monetization_on),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(),
