@@ -33,7 +33,21 @@ class _HomePageState extends State<HomePage> {
         child: Icon(Icons.monetization_on),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.grey[200],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              onPressed: () {}, 
+              icon: Icon(
+              Icons.settings,
+              size: 32,
+              ),
+            ),
+          ],
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
