@@ -131,7 +131,29 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
 
+         SizedBox(height: 25),
+
           // column -> stats + transactions
+          Column(
+            children: [
+              // statistics
+              Row(
+                children: [
+                  // icon
+                  Container(
+                    height: 80,
+                    child: Image.asset('lib/icons/statistics.png'),
+                  ),
+
+                  Column(
+                    children: [
+                      Text('Statistics'),
+                      Text('Payment and Income'),
+                    ],
+                  )
+                ],)
+            ],
+          )
         ],
       ),
     );
