@@ -30,11 +30,16 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.pink,
-        child: Icon(Icons.monetization_on),
+        child: Icon(
+          Icons.monetization_on,
+          size: 32,
+          ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         color: Colors.grey[200],
+        child: Padding(
+          padding: const EdgeInsets.only(top: 8.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -43,11 +48,20 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(
               Icons.settings,
               size: 32,
+              color: Colors.pink[200],
+              ),
+            ),
+             IconButton(
+              onPressed: () {}, 
+              icon: Icon(
+              Icons.home,
+              size: 32,
               ),
             ),
           ],
         ),
       ),
+    ),
       body: SafeArea(
         child: Column(
           children: [
