@@ -131,31 +131,37 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
 
-         SizedBox(height: 25),
-
           // column -> stats + transactions
-          Column(
-            children: [
-              // statistics
-              Row(
-                children: [
-                  // icon
-                  Container(
-                    height: 80,
-                    child: Image.asset('lib/icons/statistics.png'),
-                  ),
-
-                  Column(
-                    children: [
-                      Text('Statistics'),
-                      Text('Payment and Income'),
-                    ],
-                  ),
-
-                  Icon(Icons.arrow_forward),
-                ],
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(
+              children: [
+                // statistics
+                Row(
+                  children: [
+                    // icon
+                    Container(
+                      height: 80,
+                      padding: EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[100],
+                        borderRadius: BorderRadius.circular(12),
+                        ),
+                      child: Image.asset('lib/icons/statistics.png'),
+                    ),
+            
+                    Column(
+                      children: [
+                        Text('Statistics'),
+                        Text('Payment and Income'),
+                      ],
+                    ),
+            
+                    Icon(Icons.arrow_forward_ios),
+                  ],
+                ),
+              ],
+            ),
           )
         ],
       ),
